@@ -60,6 +60,9 @@ for i=1:numtrials
     freq_int = m(1,2)/m(size(m,1),2);
     error_cents(i) = freq2cents(freq_int);
     error_freq(i) = m(1,2)-m(size(m,1),2);
+    if error_freq(i) < 0
+        error_cents(i) = -error_cents(i);
+    end
     
 end
 
